@@ -1,20 +1,47 @@
-!function(){
-    //接收一个前缀，要写的代码和一个回调
-    function writeCode(prefix,code,fn){
-        let container = document.querySelector('#code')
-        let styleTag = document.querySelector('#styleTag')
-        let n = 0
-        let id = setInterval(()=>{
+!function () {
+    var duration = 50
+    var id
+    var n = 0
+    $('.actions').on('click', 'button', function (e) {
+        //获取button
+        let $button = $(e.currentTarget)
+        let speed = $button.attr('data-speed')
+        $button.addClass('active').siblings().removeClass('active')
+        switch (speed) {
+            case 'slow':
+                duration = 90
+                break
+            case 'normal':
+                duration = 50
+                break
+            case 'fast':
+                duration = 10
+                break
+            case 'zero':
+                window.clearTimeout(id)
+                break
+            case 'normal-again':
+                setTime()
+                break
+
+        }
+    })
+    function setTime() {  
+        id = setTimeout(function run() {
             n += 1
-            container.innerHTML = code.substring(0,n)
-            styleTag.innerHTML = code.substring(0,n)
+            let container = document.querySelector('#code')
+            let styleTag = document.querySelector('#styleTag')
+            container.innerHTML = code.substring(0, n)
+            styleTag.innerHTML = code.substring(0, n)
             container.scrollTop = container.scrollHeight
-            if(n >= code.length){
-                window.clearInterval(id)
-                //如果传了回调，就调用一下回调
-                fn && fn.call()
+            if (n < code.length) {
+                id = setTimeout(run, duration)
             }
-        },10)
+        }, duration)
+    }
+    //接收一个前缀，要写的代码
+    function writeCode(prefix, code) {
+        setTime()
     }
     let code = `
     /*给皮卡丘一张皮*/
@@ -99,14 +126,14 @@
         border-top:none;
         border-right:none;
         right:50%;
-        transform:rotate(-20deg);
+        transform:rotate(-18deg);
     }
     .wrapper > .upperLip.right{
         border-bottom-right-radius:38px 23px;
         border-top:none;
         border-left:none;
         left:50%;
-        transform:rotate(20deg);
+        transform:rotate(18deg);
     }
     /*皮卡丘的舌头*/
     .wrapper > .lowerLip-wrapper{
@@ -130,6 +157,7 @@
         border:2px solid black;
         overflow:hidden;
     }
+    /*更逼真的舌头*/
     .wrapper .lowerLip::after{
         content:'';
         display:block;
@@ -137,10 +165,9 @@
         height:158px;
         background:#FC4A62;
         position:absolute;
-        bottom:-46px;
+        bottom:-50px;
         border-radius:59px/63px;
     }
     `
-    writeCode('',code)
-
+    writeCode('', code)
 }.call()
