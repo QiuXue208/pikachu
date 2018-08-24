@@ -9,122 +9,25 @@
 }
 body{
     height:100vh;
-    background:#FEE433;
     display:flex;
-    justify-content:center;
-    align-items:center;
+    flex-direction: column;
+}
+.code-wrapper{
+    flex:1;
+    height:50%;
+    padding:17px;
+}
+.preview-wrapper{
+    flex:1;
+    height:50%;
+}
+#code{
+    overflow:hidden;
+    height:100%;
+    font-size:18px;
 }
 .wrapper{
-   width:100%;
-   height:165px;
-   position:relative;
-}
-.wrapper > .nose{
-    border-radius:50%;
-    border-style:solid;
-    border-width:12px 15px;
-    border-color:black transparent transparent;
-    position:absolute;
-    left:50%;
-    top:28px;
-    transform:translateX(-50%);
-}
-.wrapper > .eye{
-    width:50px;
-    height:50px;
-    background:#2E2E2E;
-    border-radius:50%;
-    position:absolute;
-    border:2px solid #000000;
-}
-.wrapper > .eye.left{
-    margin-right:90px;
-    right:50%;
-}
-.wrapper > .eye.right{
-    margin-left:90px;
-    left:50%;
-}
-.wrapper > .eye::after{
-    content:'';
-    display:block;
-    width:24px;
-    height:24px;
-    border-radius:50%;
-    background:white;
-    position:absolute;
-    left:4px;
-    top:1px;
-    border:2px solid #000;
-}
-.wrapper > .face{
-    width:68px;
-    height:68px;
-    border-radius:50%;
-    background:#FC0D1C;
-    border:2px solid black;
-    position:absolute;
-    top:85px;
-}
-.wrapper > .face.left{
-    right:50%;
-    margin-right:116px;
-}
-.wrapper > .face.right{
-    left:50%;
-    margin-left:116px;
-}
-.wrapper > .upperLip{
-    width:71px;
-    height:18px;
-    border:3px solid;
-    position:absolute;
-    top:53px;
-    background:#FEE433;
-    z-index:1;
-}
-.wrapper > .upperLip.left{
-    border-bottom-left-radius:38px 23px;
-    border-top:none;
-    border-right:none;
-    right:50%;
-    transform:rotate(-20deg);
-}
-.wrapper > .upperLip.right{
-    border-bottom-right-radius:38px 23px;
-    border-top:none;
-    border-left:none;
-    left:50%;
-    transform:rotate(20deg);
-}
-.wrapper  .lowerLip{
-    width:124px;
-    height:507px;
-    background:#990513;
-    border-radius:102px/410px;
-    position:absolute;
-    left:50%;
-    bottom:20px;
-    transform:translateX(-50%);
-    border:2px solid black;
-    overflow:hidden;
-}
-.wrapper > .lowerLip-wrapper{
-    width:124px;
-    height:150px;
-    position:absolute;
-    left:50%;
-    bottom:-44px;
-    transform:translateX(-50%);
-    overflow:hidden;
-}
-.wrapper .lowerLip::after{
-    content:'';
-    display:block;
-    width:124px;
-    height:158px;
-    background:#FC4A62;
-    position:absolute;
-    bottom:-46px;
-    border-radius:59px/63px;
-}
+    width:100%;
+    height:165px;
+    position:relative;
+ }
