@@ -23,7 +23,6 @@
             case 'normal-again':
                 setTime()
                 break
-
         }
     })
     function setTime() {  
