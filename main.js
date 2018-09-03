@@ -30,7 +30,7 @@
             n += 1
             let container = document.querySelector('#code')
             let styleTag = document.querySelector('#styleTag')
-            container.innerHTML = code.substring(0, n)
+            container.innerHTML = Prism.highlight(code.substring(0, n), Prism.languages.css, 'css');
             styleTag.innerHTML = code.substring(0, n)
             container.scrollTop = container.scrollHeight
             if (n < code.length) {
@@ -50,6 +50,25 @@
         display:flex;
         justify-content:center;
         align-items:center;
+    }
+    /*给代码一个高亮吧*/
+    .token.comment{
+        color:slategray;
+    }
+    .token.selector{
+        color:#690;
+    }
+    .token.punctuation{
+        color:#999;
+    }
+    .token.property{
+        color:#905;
+    }
+    .token.string{
+        color:black;
+    }
+    .token.function{
+        color:#DD4A68;
     }
     /*皮卡丘的鼻子*/
     .wrapper > .nose{

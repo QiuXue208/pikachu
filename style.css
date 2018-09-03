@@ -7,6 +7,24 @@
 *::after{
     box-sizing:border-box;
 }
+.token.comment{
+    color:black;
+}
+.token.selector{
+    color:black;
+}
+.token.punctuation{
+    color:black;
+}
+.token.property{
+    color:black;
+}
+.token.string{
+    color:black;
+}
+.token.function{
+    color:black;
+}
 body{
     height:100vh;
     display:flex;
