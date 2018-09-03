@@ -166,7 +166,6 @@
         position:absolute;
         bottom:-50px;
         border-radius:59px/63px;
-    }
-    `
+    }`
     writeCode('', code)
 }.call()
