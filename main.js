@@ -25,7 +25,7 @@
                 break
         }
     })
-    function setTime() {  
+    function setTime() {
         id = setTimeout(function run() {
             n += 1
             let container = document.querySelector('#code')
